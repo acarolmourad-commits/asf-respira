@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASF Respira — ASF</title>
-<meta name="description" content="Treinador interativo de respiração 4-4-4 e apneia para surfistas">
+<meta name="description" content="Treinador interativo de respiração 4-4-4, técnicas de respiração e apneia segura para surfistas">
 <style>
 :root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
@@ -17,12 +17,17 @@ nav a:hover{background:var(--rosa);color:#fff}
 main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
 .card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
 .card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
+.card p{margin-bottom:.5rem}
 button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
 button:hover{opacity:.85}
 input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
 .xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002}
 footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 #circ{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#7b2ff7,#00c2cb);margin:1rem auto;transition:transform 4s ease-in-out}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.mini{background:var(--areia);border-radius:.75rem;padding:1rem}
+.mini h3{color:var(--mar);font-size:1rem;margin-bottom:.4rem}
+.alerta{background:#fff3cd;border-left:4px solid var(--rosa);border-radius:.5rem;padding:1rem;margin-top:1rem}
 </style>
 </head>
 <body>
@@ -53,6 +58,27 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 <div class="card"><h2>Treino de Respiração 4-4-4</h2><p>Inspire 4s · Segure 4s · Expire 4s. Fortaleça sua calma para o mar.</p>
 <div id="circ"></div><h3 id="fase" style="text-align:center;margin:.6rem">Pronta?</h3>
 <button onclick="start()">Iniciar ciclo</button></div>
+<div class="card"><h2>🫁 Técnicas de respiração para surfistas</h2><div class="grid">
+<div class="mini"><h3>Box Breathing 4-4-4-4</h3><p>Inspire 4s, segure 4s, expire 4s, segure vazio 4s. Usada por atletas de elite para controlar o estresse antes de entrar em ondas grandes.</p></div>
+<div class="mini"><h3>Respiração 4-7-8</h3><p>Inspire 4s pelo nariz, segure 7s, expire 8s pela boca. Perfeita para dormir bem na véspera de uma sessão ou acalmar a ansiedade pré-surf.</p></div>
+<div class="mini"><h3>Respiração diafragmática</h3><p>Mão na barriga: inspire inflando a barriga (não o peito), expire esvaziando. É a base de todas as outras técnicas — respire fundo de verdade.</p></div>
+<div class="mini"><h3>Respiração alternada (Nadi Shodhana)</h3><p>Tampe uma narina por vez, alternando a inspiração. Equilibra o sistema nervoso — ótima antes de competições. Combine com o <a href="https://acarolmourad-commits.github.io/asf-yoga/">ASF Yoga</a>.</p></div>
+<div class="mini"><h3>Expiração prolongada</h3><p>Expire o dobro do tempo que inspirou (ex.: 3s dentro, 6s fora). Ativa o modo "descanso" do corpo e baixa os batimentos rápido.</p></div>
+<div class="mini"><h3>Respiração de recuperação</h3><p>Depois de um wipeout ou série de remada forte: 2–3 inspirações profundas e completas antes de qualquer apneia ou esforço. Nunca pule a recuperação!</p></div>
+</div></div>
+<div class="card"><h2>🤿 Apneia com segurança</h2><p>Segurar a respiração embaixo d'água exige técnica e, principalmente, precaução:</p>
+<p><b>⛔ Nunca treine apneia sozinha na água</b> — nem em piscina, nem no mar, nem na banheira. O desmaio de águas rasas (shallow water blackout) chega sem aviso. Sempre com uma parceira observando.</p>
+<p><b>Não hiperventile:</b> respirar rápido e fundo várias vezes antes de prender o ar mascara o alarme de CO₂ do corpo e é a principal causa de desmaio. Faça apenas 2–3 respirações profundas e calmas.</p>
+<p><b>Progressão em terra:</b> comece treinando sentada ou deitada em casa (seguro!). Cronometre e anote no <a href="https://acarolmourad-commits.github.io/asf-diario/">ASF Diário</a> para ver sua evolução semanal.</p>
+<p><b>Sinais para parar:</b> contrações do diafragma intensas, visão escurecendo, formigamento — pare imediatamente e respire normal.</p>
+<p><b>No wipeout real:</b> relaxe em vez de lutar. Ficar calma economiza até 50% do oxigênio. Proteja a cabeça com os braços e conte devagar — a maioria das ondas segura por menos de 15 segundos.</p></div>
+<div class="card"><h2>🏄‍♀️ Rotina de respiração pré-surf</h2>
+<p><b>1.</b> 3 min de respiração diafragmática na areia, observando o mar.</p>
+<p><b>2.</b> 5 ciclos de 4-4-4 (use o treinador acima!) para entrar no ritmo.</p>
+<p><b>3.</b> Visualize uma onda enquanto inspira e a remada ao expirar — respiração + mentalização.</p>
+<p><b>4.</b> Nos primeiros 5 min de água, mantenha a expiração longa para adaptar o corpo ao mar.</p>
+<p><b>5.</b> Entre as séries de ondas, evite prender a respiração na remada — ritmo constante de respiro.</p>
+<p style="margin-top:.6rem">Respiração é treino como qualquer outro: 5 minutinhos por dia já mudam sua calma no mar. 🌊 Mais conteúdo em <a href="https://acarolmourad-commits.github.io/asf-mental/">ASF Mental</a> e <a href="https://acarolmourad-commits.github.io/asf-bemestar/">ASF Bem-estar</a>.</p></div>
 <div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
 </main>
 <div class="xp">⭐ XP: <span id="xp">0</span></div>

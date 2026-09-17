@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASF Respira — ASF</title>
-<meta name="description" content="Treinador interativo de respiração 4-4-4, técnicas de respiração e apneia segura para surfistas">
+<meta name="description" content="Treinador interativo de respiração 4-4-4 e apneia para surfistas">
 <style>
 :root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
@@ -27,7 +27,7 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
 .mini{background:var(--areia);border-radius:.75rem;padding:1rem}
 .mini h3{color:var(--mar);font-size:1rem;margin-bottom:.4rem}
-.alerta{background:#fff3cd;border-left:4px solid var(--rosa);border-radius:.5rem;padding:1rem;margin-top:1rem}
+.alerta{background:#fff3cd;border-left:4px solid #e63970;border-radius:.5rem;padding:1rem;margin-top:1rem}
 </style>
 </head>
 <body>
@@ -58,27 +58,38 @@ footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
 <div class="card"><h2>Treino de Respiração 4-4-4</h2><p>Inspire 4s · Segure 4s · Expire 4s. Fortaleça sua calma para o mar.</p>
 <div id="circ"></div><h3 id="fase" style="text-align:center;margin:.6rem">Pronta?</h3>
 <button onclick="start()">Iniciar ciclo</button></div>
-<div class="card"><h2>🫁 Técnicas de respiração para surfistas</h2><div class="grid">
-<div class="mini"><h3>Box Breathing 4-4-4-4</h3><p>Inspire 4s, segure 4s, expire 4s, segure vazio 4s. Usada por atletas de elite para controlar o estresse antes de entrar em ondas grandes.</p></div>
-<div class="mini"><h3>Respiração 4-7-8</h3><p>Inspire 4s pelo nariz, segure 7s, expire 8s pela boca. Perfeita para dormir bem na véspera de uma sessão ou acalmar a ansiedade pré-surf.</p></div>
-<div class="mini"><h3>Respiração diafragmática</h3><p>Mão na barriga: inspire inflando a barriga (não o peito), expire esvaziando. É a base de todas as outras técnicas — respire fundo de verdade.</p></div>
-<div class="mini"><h3>Respiração alternada (Nadi Shodhana)</h3><p>Tampe uma narina por vez, alternando a inspiração. Equilibra o sistema nervoso — ótima antes de competições. Combine com o <a href="https://acarolmourad-commits.github.io/asf-yoga/">ASF Yoga</a>.</p></div>
-<div class="mini"><h3>Expiração prolongada</h3><p>Expire o dobro do tempo que inspirou (ex.: 3s dentro, 6s fora). Ativa o modo "descanso" do corpo e baixa os batimentos rápido.</p></div>
-<div class="mini"><h3>Respiração de recuperação</h3><p>Depois de um wipeout ou série de remada forte: 2–3 inspirações profundas e completas antes de qualquer apneia ou esforço. Nunca pule a recuperação!</p></div>
+<div class="card"><h2>🧘‍♀️ Por que treinar respiração para o surf?</h2>
+<p>Respirar bem é o que separa a calma do pânico quando o mar fecha. Uma boa capacidade respiratória ajuda você a:</p>
+<p>• Manter a calma em wipeouts e séries grandes 🌊</p>
+<p>• Aumentar o tempo de apneia com segurança em mergulho pato</p>
+<p>• Recuperar o fôlego mais rápido entre as ondas</p>
+<p>• Reduzir a ansiedade antes de entrar em mar grande</p>
+<p>• Melhorar o foco e a leitura de onda (mente oxigenada decide melhor!)</p></div>
+<div class="card"><h2>🌬️ Técnicas de respiração</h2><div class="grid">
+<div class="mini"><h3>Box Breathing 4-4-4-4</h3><p>Inspire 4s · segure 4s · expire 4s · segure vazio 4s. Usada por atletas de elite e mergulhadores para controle total da ansiedade. Ótima antes de sessões de mar grande.</p></div>
+<div class="mini"><h3>Respiração 4-7-8 (sono)</h3><p>Inspire 4s pelo nariz · segure 7s · expire 8s pela boca. Acalma o sistema nervoso e ajuda a dormir — recuperação é treino! Perfeita na véspera de campeonato.</p></div>
+<div class="mini"><h3>Respiração diafragmática</h3><p>Mão na barriga: inspire inflando a barriga (não o peito), expire esvaziando. 5 min por dia aumentam a capacidade pulmonar e a eficiência da remada.</p></div>
+<div class="mini"><h3>Respiração alternada (Nadi Shodhana)</h3><p>Tampe a narina direita, inspire pela esquerda · tampe a esquerda, expire pela direita. Alterne por 3–5 min. Equilibra foco e calma — ideal antes de entrar no mar.</p></div>
+<div class="mini"><h3>Suspiro fisiológico</h3><p>Dupla inspiração pelo nariz (uma longa + uma curtinha no topo) e expire longo pela boca. Repita 3x. Alívio instantâneo de estresse — ótimo após um susto no mar.</p></div>
+<div class="mini"><h3>Método Wim Hof (básico)</h3><p>30 respirações profundas e rápidas, expire e segure o vazio o máximo que puder, inspire fundo e segure 15s. Repita 3 rodadas. Sempre sentada ou deitada, nunca na água!</p></div>
 </div></div>
-<div class="card"><h2>🤿 Apneia com segurança</h2><p>Segurar a respiração embaixo d'água exige técnica e, principalmente, precaução:</p>
-<p><b>⛔ Nunca treine apneia sozinha na água</b> — nem em piscina, nem no mar, nem na banheira. O desmaio de águas rasas (shallow water blackout) chega sem aviso. Sempre com uma parceira observando.</p>
-<p><b>Não hiperventile:</b> respirar rápido e fundo várias vezes antes de prender o ar mascara o alarme de CO₂ do corpo e é a principal causa de desmaio. Faça apenas 2–3 respirações profundas e calmas.</p>
-<p><b>Progressão em terra:</b> comece treinando sentada ou deitada em casa (seguro!). Cronometre e anote no <a href="https://acarolmourad-commits.github.io/asf-diario/">ASF Diário</a> para ver sua evolução semanal.</p>
-<p><b>Sinais para parar:</b> contrações do diafragma intensas, visão escurecendo, formigamento — pare imediatamente e respire normal.</p>
-<p><b>No wipeout real:</b> relaxe em vez de lutar. Ficar calma economiza até 50% do oxigênio. Proteja a cabeça com os braços e conte devagar — a maioria das ondas segura por menos de 15 segundos.</p></div>
-<div class="card"><h2>🏄‍♀️ Rotina de respiração pré-surf</h2>
-<p><b>1.</b> 3 min de respiração diafragmática na areia, observando o mar.</p>
-<p><b>2.</b> 5 ciclos de 4-4-4 (use o treinador acima!) para entrar no ritmo.</p>
-<p><b>3.</b> Visualize uma onda enquanto inspira e a remada ao expirar — respiração + mentalização.</p>
-<p><b>4.</b> Nos primeiros 5 min de água, mantenha a expiração longa para adaptar o corpo ao mar.</p>
-<p><b>5.</b> Entre as séries de ondas, evite prender a respiração na remada — ritmo constante de respiro.</p>
-<p style="margin-top:.6rem">Respiração é treino como qualquer outro: 5 minutinhos por dia já mudam sua calma no mar. 🌊 Mais conteúdo em <a href="https://acarolmourad-commits.github.io/asf-mental/">ASF Mental</a> e <a href="https://acarolmourad-commits.github.io/asf-bemestar/">ASF Bem-estar</a>.</p></div>
+<div class="card"><h2>🤿 Apneia para surfistas</h2>
+<p>Em wipeouts, você pode ficar 10–30s embaixo d'água. Treinar apneia <b>em terra firme</b> prepara o corpo e a mente:</p>
+<p><b>Teste base:</b> depois de 2 min de respiração calma, inspire fundo e segure. Anote o tempo confortável (sem forçar!). A maioria começa em 30–60s.</p>
+<p><b>Treino de CO₂ (tabela):</b> segure a respiração por 50% do seu máximo, descanse 2 min, repita 8x reduzindo o descanso em 15s a cada rodada. Ensina o corpo a tolerar CO₂ sem pânico.</p>
+<p><b>Treino de O₂:</b> segure o máximo confortável, descanse 2–3 min completos, repita 5x aumentando 5–10s por rodada. Máximo 1x por semana.</p>
+<p><b>Apneia caminhando:</b> caminhe segurando a respiração (em terra, lugar seguro) — simula a demanda física de remar embaixo d'água.</p>
+<p><b>Na prancha:</b> pratique ficar calma debaixo d'água em mar pequeno — solte ar devagar pelo nariz, relaxe os ombros, conte mentalmente. O pânico gasta 3x mais oxigênio.</p></div>
+<div class="card"><h2>🌊 Respiração no dia a dia do surf</h2>
+<p><b>Antes de entrar:</b> 5 min de respiração diafragmática na areia — reduz a adrenalina e melhora a leitura das séries.</p>
+<p><b>Na remada:</b> sincronize a respiração com as braçadas (inspire 2 braçadas, expire 2) para não cansar rápido.</p>
+<p><b>No wipeout:</b> expire devagar pelo nariz enquanto roda — protege os pulmões da pressão e mantém você calma.</p>
+<p><b>Entre séries:</b> 3 suspiros fisiológicos na prancha resetam a mente para a próxima onda.</p>
+<p><b>Pós-surf:</b> 5 min de 4-7-8 aceleram a recuperação e reduzem o cortisol.</p>
+<p>Combine com as aulas do <a href="https://acarolmourad-commits.github.io/asf-yoga/">ASF Yoga</a> e os exercícios do <a href="https://acarolmourad-commits.github.io/asf-treino/">ASF Treino</a> para evoluir ainda mais! 💜</p></div>
+<div class="card"><h2>⚠️ Segurança em primeiro lugar</h2>
+<div class="alerta"><strong>NUNCA treine apneia na água sozinha.</strong> Blackout de apneia não avisa — acontece sem sintomas. Treinos na piscina ou no mar, apenas com uma parceira treinada observando a menos de 1 braço de distância. Na dúvida, treine só em terra firme: sofá, cama ou esteira de yoga são perfeitos. 🙏</div>
+<p style="margin-top:.8rem">Sinais de alerta durante o treino: zumbido no ouvido, visão escurecendo, formigamento, contrações fortes — pare imediatamente e respire normal. Mais segurança no <a href="https://acarolmourad-commits.github.io/asf-seguranca/">ASF Segurança</a>.</p></div>
 <div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
 </main>
 <div class="xp">⭐ XP: <span id="xp">0</span></div>

@@ -1,129 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASF Respira — Treino de Respiração 4-4-4 para Surfistas | ASF</title>
-<meta name="description" content="Treinador interativo de respiração 4-4-4 e box breathing para surfistas: calma e controle para o mar">
-<style>
-:root{--rosa:#ff4d8d;--roxo:#7b2ff7;--areia:#fff5ec;--mar:#00c2cb}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
-body{background:linear-gradient(160deg,#fff5ec,#ffe3f1 60%,#e0f7fa);min-height:100vh;color:#333}
-header{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;padding:2rem 1rem;text-align:center}
-header h1{font-size:2rem} header p{opacity:.9;margin-top:.4rem}
-nav{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;padding:.8rem;background:#fff;box-shadow:0 2px 8px #0001;position:sticky;top:0;z-index:10}
-nav a{background:var(--areia);border:1px solid #ffd3e6;color:#c2185b;padding:.3rem .7rem;border-radius:20px;font-size:.78rem;text-decoration:none}
-nav a:hover{background:var(--rosa);color:#fff}
-main{max-width:760px;margin:1.5rem auto;padding:0 1rem}
-.card{background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px #7b2ff720;margin-bottom:1.2rem}
-.card h2{color:var(--roxo);margin-bottom:.6rem;font-size:1.2rem}
-.card p{margin-bottom:.5rem}
-button{background:linear-gradient(90deg,var(--rosa),var(--roxo));color:#fff;border:none;padding:.6rem 1.2rem;border-radius:24px;font-size:1rem;cursor:pointer}
-button:hover{opacity:.85}
-input,select,textarea{padding:.5rem;border:1px solid #ddd;border-radius:10px;width:100%;margin:.3rem 0;font-size:1rem}
-.xp{position:fixed;bottom:1rem;right:1rem;background:#fff;border:2px solid var(--rosa);border-radius:24px;padding:.4rem 1rem;font-weight:bold;color:var(--roxo);box-shadow:0 4px 12px #0002}
-footer{text-align:center;padding:2rem;font-size:.8rem;color:#888}
-#circ{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#7b2ff7,#00c2cb);margin:1rem auto;transition:transform 4s ease-in-out}
-.alerta{background:#fff3cd;border-left:4px solid #e63970;border-radius:.5rem;padding:1rem;margin-top:.8rem}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7138a5">
+<title>ASF Respira — Respiração consciente para surfistas | ASF</title>
+<meta name="description" content="Uma pausa para respirar, recuperar o foco e se preparar para o surf. Treino guiado de respiração 4-4-4, orientações práticas e segurança.">
 <link rel="canonical" href="https://respira.asf.surf/">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"ASF Respira","url":"https://respira.asf.surf/","applicationCategory":"SportsApplication","operatingSystem":"Web","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"ASF — Associação Surf Feminino","url":"https://acarolmourad-commits.github.io/asf-app/"}}
-</script>
 <meta property="og:type" content="website">
-<meta property="og:title" content="ASF Respira — ASF">
-<meta property="og:description" content="Treinador interativo de respiração 4-4-4 e apneia para surfistas">
+<meta property="og:title" content="ASF Respira — Respire, concentre-se, volte ao mar">
+<meta property="og:description" content="Treino guiado de respiração e orientações de segurança para a comunidade do surf.">
 <meta property="og:url" content="https://respira.asf.surf/">
-<meta property="og:image" content="https://acarolmourad-commits.github.io/thumbnails/asf-respira.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://acarolmourad-commits.github.io/thumbnails/asf-respira.jpg">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1643806355443576" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://acarolmourad-commits.github.io/asf-app/asf-site-redesign.css">
+<style>
+:root{color-scheme:light;--ink:#292238;--muted:#655d70;--purple:#7138a5;--pink:#e94f91;--sea:#087e8b;--paper:#fff;--soft:#f8f2fc;--line:#eadff1;--warn:#fff3d9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(160deg,#fff4f8 0%,#f5f2ff 52%,#eaf8f8 100%);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:#5b2a91}a:focus-visible,button:focus-visible{outline:3px solid #087e8b;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:.7rem 1rem;z-index:100}.skip:focus{left:8px}
+header{padding:2.2rem 1rem 1.8rem;text-align:center;color:white;background:linear-gradient(120deg,#7138a5,#d94f91)}header h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.1;margin:0 0 .6rem}header p{max-width:650px;margin:.4rem auto 0}
+nav{position:sticky;top:0;z-index:10;display:flex;gap:.5rem;overflow-x:auto;padding:.7rem max(1rem,calc((100vw - 900px)/2));background:#fffF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+nav a{white-space:nowrap;text-decoration:none;font-size:.88rem;font-weight:650;padding:.45rem .8rem;border-radius:99px;background:var(--soft)}
+main{max-width:900px;margin:1.2rem auto;padding:0 1rem 3rem}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(1.1rem,4vw,1.8rem);margin:1rem 0;box-shadow:0 8px 28px #45215b0c}
+h2{margin:.1rem 0 .7rem;font-size:1.35rem;color:#552b78}h3{font-size:1.05rem;margin:1rem 0 .3rem}p{margin:.5rem 0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;font-weight:800;color:var(--sea)}
+.alert{background:var(--warn);border:1px solid #f0d18c;border-left:5px solid #bd7b14;border-radius:14px;padding:1rem;margin:1rem 0}.alert strong{display:block;margin-bottom:.25rem}
+.trainer{text-align:center}.phase{font-size:1.1rem;font-weight:750;min-height:2rem;margin-top:.6rem}.orb{width:min(42vw,170px);aspect-ratio:1;border-radius:50%;margin:1rem auto;background:radial-gradient(circle at 35% 30%,#f8a6ca,#8b58c5 70%);box-shadow:0 12px 35px #7138a544;transform:scale(1);transition:transform 1s ease}
+.orb.inhale{transform:scale(1.18)}.orb.hold{transform:scale(1.18)}.orb.exhale{transform:scale(.86)}
+.counter{font-variant-numeric:tabular-nums;font-size:2.4rem;font-weight:800;color:var(--purple);line-height:1.2}
+button{border:0;border-radius:999px;padding:.8rem 1.2rem;background:linear-gradient(110deg,var(--purple),var(--pink));color:#fff;font:inherit;font-weight:750;cursor:pointer;margin:.3rem}
+button.secondary{background:#f1e8f8;color:#51247a;border:1px solid #e2d2ed}button:disabled{opacity:.45;cursor:not-allowed}.controls{display:flex;justify-content:center;flex-wrap:wrap;gap:.25rem}
+.progress{height:9px;background:#eee5f4;border-radius:99px;overflow:hidden;margin:1rem auto;max-width:440px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .2s}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem}.tile{background:var(--soft);padding:1rem;border-radius:15px}.tile h3{margin-top:0}.pill{display:inline-block;padding:.18rem .6rem;border-radius:99px;background:#e9f6f4;color:#075d66;font-size:.78rem;font-weight:700}
+ul{padding-left:1.25rem}li{margin:.35rem 0}.xp{position:fixed;right:1rem;bottom:1rem;background:#fff;border:1px solid var(--line);border-radius:99px;padding:.55rem .9rem;box-shadow:0 5px 18px #0002;font-weight:800;color:var(--purple);z-index:5}
+footer{text-align:center;color:var(--muted);padding:2rem 1rem;font-size:.9rem}
+@media(max-width:520px){header{padding:1.7rem 1rem}nav{padding:.6rem .7rem}.card{border-radius:17px}.controls button{flex:1 1 42%}.xp{right:.6rem;bottom:.6rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
 </head>
-\1
-<div style="background:#ffe9e9;border:1px solid #ffb3b3;color:#5c0000;padding:10px 14px;border-radius:10px;margin:12px auto;max-width:960px;font:600 14px/1.5 system-ui,sans-serif">✅ Atualizado em 23/10/2026 · ⚠️ Apneia: nunca treine apneia na água sozinha — treine em seco ou com supervisão direta de pessoa treinada.</div>
-<header><h1>🌬️ ASF Respira</h1><p>Treinador interativo de respiração 4-4-4 e apneia para surfistas</p></header>
-
-<main>
-<div class="card"><h2>Treino de Respiração 4-4-4</h2><p>Inspire 4s · Segure 4s · Expire 4s. Fortaleça sua calma para o mar.</p>
-<div id="circ"></div><h3 id="fase" style="text-align:center;margin:.6rem">Pronta?</h3>
-<button onclick="start()">Iniciar ciclo</button></div>
-<div class="card"><h2>🫁 Mais técnicas de respiração</h2>
-<p><b>Box Breathing (4-4-4-4):</b> inspire 4s · segure com ar 4s · expire 4s · segure sem ar 4s. Usada por atletas de elite para controle do estresse antes de entrar no mar.</p>
-<p><b>Respiração 4-7-8:</b> inspire 4s pelo nariz · segure 7s · expire 8s pela boca. Excelente para acalmar a mente na véspera de campeonatos e para dormir melhor.</p>
-<p><b>Respiração diafragmática:</b> deite, mão na barriga, e respire inflando a barriga (não o peito). 5min por dia aumentam a capacidade pulmonar e a eficiência do oxigênio.</p>
-<p><b>Respiração alternada (Nadi Shodhana):</b> tampe uma narina por vez, alternando a cada ciclo. Equilibra foco e calma — perfeita antes de uma sessão desafiadora.</p>
-<p><b>Expiração longa:</b> expire sempre o dobro do tempo da inspiração (ex.: 4s inspirando, 8s expirando). Ativa o sistema nervoso parassimpático e reduz a frequência cardíaca.</p></div>
-<div class="card"><h2>🤿 Apneia para surfistas (breath-hold)</h2>
-<p><b>Por que treinar:</b> em hold-downs (tempo submersa após um wipeout), quem conhece seus limites entra em pânico menos — e pânico é o que mais gasta oxigênio.</p>
-<p><b>Treino em seco (CO₂ table):</b> deitada e relaxada, faça apneias com intervalos fixos, reduzindo o descanso a cada rodada. Ensina o corpo a tolerar o CO₂.</p>
-<p><b>Treino O₂ table:</b> intervalos de descanso fixos, aumentando o tempo de apneia a cada rodada. Aumenta a capacidade máxima gradualmente.</p>
-<p><b>Na água:</b> pratique apenas em piscina rasa e <b>sempre acompanhada</b> — nunca sozinha. No mar, o melhor treino é a calma: relaxe o corpo durante o hold-down, contrações gastam O₂.</p>
-<p><b>Relaxamento é o segredo:</b> o coração acelerado consome oxigênio 3x mais rápido. Aceite a onda, solte os ombros, conte devagar: "1, 2, 3..." até a espuma clarear.</p>
-<div class="alerta"><strong>⚠️ Segurança em apneia:</strong> nunca prenda a respiração na água sem supervisão direta de alguém treinado. Desmaio de apneia (blackout) acontece sem aviso. Em seco (deitada, em casa) é seguro treinar sozinha. Conheça também o <a href="https://acarolmourad-commits.github.io/asf-seguranca/">ASF Segurança</a>.</div></div>
-<div class="card"><h2>🌊 Respiração no dia a dia do surf</h2>
-<p><b>Antes de entrar no mar:</b> 5 ciclos de 4-4-4 na areia acalmam o sistema nervoso e melhoram o foco.</p>
-<p><b>Na remada:</b> ritmo constante — inspire a cada 2 braçadas, expire a cada 2. Evita a fadiga precoce.</p>
-<p><b>Depois do wipeout:</b> ao emergir, a primeira respiração deve ser uma <b>expiração</b> forte (limpa o CO₂), depois inspire fundo. É o "recovery breathing" dos mergulhadores livres.</p>
-<p><b>Entre as séries de ondas:</b> sentada na prancha, faça 3 respirações profundas de diafragma para baixar os batimentos antes da próxima série.</p>
-<p><b>Sono:</b> a técnica 4-7-8 antes de dormir melhora a recuperação — sono é onde o fôlego e o corpo se constroem. Veja também <a href="https://acarolmourad-commits.github.io/asf-nutricao/">ASF Nutrição</a> e <a href="https://acarolmourad-commits.github.io/asf-yoga/">ASF Yoga</a>.</p></div>
-<div class="card"><h2>🌟 Dica da Semana</h2><p id="dica-semana">Carregando…</p><p style="font-size:.8rem;color:#888">Nova dica de respiração toda semana, automaticamente. ✨</p></div>
-<div class="card"><h2>🌐 Ecossistema ASF</h2><p>Este app faz parte da constelação ASF — Associação de Surf Feminino. Ganhe XP aqui e veja seu progresso no <a href="https://acarolmourad-commits.github.io/asf-ranking/">ASF Ranking</a>. App principal: <a href="https://acarolmourad-commits.github.io/asf-app/">ASF App</a>.</p></div>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header><div class="eyebrow" style="color:#fff">Associação de Surf Feminino</div><h1>🌬️ ASF Respira</h1><p>Uma pausa para respirar, acalmar a mente e encontrar seu ritmo antes e depois do surf.</p></header>
+<nav aria-label="Navegação da página"><a href="#treino">Treino guiado</a><a href="#tecnicas">Técnicas</a><a href="#seguranca">Segurança</a><a href="#surf">No surf</a><a href="#ecossistema">ASF</a></nav>
+<main id="conteudo">
+<div class="alert" role="note"><strong>⚠️ Segurança em primeiro lugar</strong>Este recurso é educativo e não substitui orientação profissional. Não pratique retenção de ar ou apneia como desafio. Nunca faça apneia na água, na piscina ou no mar sem supervisão presencial especializada — e nunca sozinha. Não hiperventile nem force a respiração.</div>
+<section class="card trainer" id="treino" aria-labelledby="treino-title">
+<div class="eyebrow">Prática guiada · em terra</div><h2 id="treino-title">Respiração consciente 4-4-4</h2>
+<p class="muted">Inspire suavemente por 4 segundos, faça uma pausa confortável de até 4 segundos e expire por 4 segundos. Se a pausa não for confortável, respire continuamente, sem prender o ar.</p>
+<div class="orb" id="orb" aria-hidden="true"></div><div class="phase" id="fase" aria-live="polite">Pronta para começar?</div><div class="counter" id="contador" aria-label="Contagem regressiva">—</div>
+<div class="progress" role="progressbar" aria-label="Progresso do treino" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="barra"><span id="progresso"></span></div>
+<p class="muted" id="rodada">12 ciclos · cerca de 2 minutos e 24 segundos</p>
+<div class="controls"><button id="iniciar" type="button">Iniciar ciclo</button><button id="pausar" class="secondary" type="button" disabled>Pausar</button><button id="encerrar" class="secondary" type="button" disabled>Encerrar</button></div>
+<p class="muted" id="estado" aria-live="polite">Faça sentada ou em pé, em um lugar tranquilo. Pare se sentir tontura, falta de ar ou desconforto.</p>
+</section>
+<section class="card" id="tecnicas"><div class="eyebrow">Outras possibilidades</div><h2>🫁 Técnicas de respiração</h2>
+<div class="grid">
+<article class="tile"><span class="pill">Ritmo suave</span><h3>Respiração diafragmática</h3><p>Inspire sem esforço, percebendo o abdômen se expandir; expire devagar. Mantenha o conforto, sem buscar inspirar o máximo possível.</p></article>
+<article class="tile"><span class="pill">Atenção plena</span><h3>Respiração natural</h3><p>Observe o ar entrando e saindo sem alterar o ritmo. Quando a mente se distrair, volte gentilmente à sensação da respiração.</p></article>
+<article class="tile"><span class="pill">Expiração tranquila</span><h3>Soltar o ar com calma</h3><p>Deixe a expiração acontecer sem esvaziar os pulmões à força. Não prolongue o tempo se isso gerar desconforto.</p></article>
+</div>
+<p class="muted">As técnicas são opções de relaxamento, não métodos para aumentar limites de apneia ou substituir treinamento supervisionado.</p>
+</section>
+<section class="card" id="seguranca"><div class="eyebrow">Leia antes de praticar</div><h2>🤿 Apneia: informação e prevenção</h2>
+<p>Prender a respiração pode provocar perda súbita de consciência, inclusive sem sinais de alerta. O risco existe também em água rasa e em atividades recreativas.</p>
+<ul><li><strong>Nunca pratique apneia sozinha</strong> nem transforme a retenção de ar em competição ou desafio.</li><li><strong>Não hiperventile</strong> antes de prender a respiração: isso pode atrasar o sinal de necessidade de respirar e aumentar o risco de apagamento.</li><li><strong>Não faça tabelas de CO₂/O₂ ou séries de retenção por conta própria.</strong> Não oferecemos protocolos de apneia nesta página.</li><li>Não pratique retenção de ar na água, no banho, dirigindo ou em qualquer situação em que um mal-estar possa causar acidente.</li><li>Interrompa qualquer exercício se houver tontura, formigamento, dor, falta de ar, palpitação ou mal-estar. Retome a respiração natural e procure orientação se os sintomas persistirem.</li></ul>
+<div class="alert"><strong>Importante</strong>O treino guiado desta página é apenas de respiração confortável em terra. Ele não prepara para mergulho, hold-downs ou apneia e não deve ser usado como garantia de segurança no mar.</div>
+<p>Para orientações de segurança no ambiente aquático, consulte também <a href="https://acarolmourad-commits.github.io/asf-seguranca/">ASF Segurança</a> e procure instrutor ou profissional qualificado para qualquer modalidade de apneia.</p>
+</section>
+<section class="card" id="surf"><div class="eyebrow">Aplicação no cotidiano</div><h2>🌊 Respiração e rotina de surf</h2>
+<div class="grid">
+<article class="tile"><h3>Antes de entrar no mar</h3><p>Se estiver em terra e em local seguro, faça alguns ciclos de respiração natural para desacelerar e organizar a atenção. Não use a prática para testar retenção de ar.</p></article>
+<article class="tile"><h3>Durante a sessão</h3><p>Respire normalmente. Respeite seus limites, as condições do mar e suas habilidades. Se estiver cansada, ansiosa ou indisposta, saia da água e peça apoio.</p></article>
+<article class="tile"><h3>Depois do surf</h3><p>Recupere o fôlego sem pressa, hidrate-se e observe como está se sentindo. Se houver sintomas preocupantes, procure atendimento.</p></article>
+</div></section>
+<section class="card"><div class="eyebrow">Lembrete da semana</div><h2>🌟 Dica para levar com você</h2><p id="dica">Respirar com conforto é mais importante do que seguir uma contagem. Seu corpo não precisa provar nada.</p></section>
+<section class="card" id="ecossistema"><div class="eyebrow">Comunidade</div><h2>💜 Ecossistema ASF</h2><p>O ASF Respira faz parte da rede de ferramentas da Associação de Surf Feminino. Explore outros conteúdos e continue sua jornada com informação e segurança.</p><div class="grid"><a class="tile" href="https://acarolmourad-commits.github.io/asf-app/"><strong>🌊 App ASF</strong><br><span class="muted">Acesse a plataforma principal</span></a><a class="tile" href="https://acarolmourad-commits.github.io/asf-yoga/"><strong>🧘 ASF Yoga</strong><br><span class="muted">Mobilidade e bem-estar</span></a><a class="tile" href="https://acarolmourad-commits.github.io/asf-seguranca/"><strong>🛟 ASF Segurança</strong><br><span class="muted">Orientações para o mar</span></a><a class="tile" href="https://acarolmourad-commits.github.io/asf-ranking/"><strong>⭐ ASF Ranking</strong><br><span class="muted">Acompanhe sua participação</span></a></div></section>
+<p class="muted" style="text-align:center;font-size:.82rem">Conteúdo revisado em 15/11/2026 · Material educativo da ASF.</p>
 </main>
-<div class="xp">⭐ XP: <span id="xp">0</span></div>
-<footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜 · <a href="https://acarolmourad-commits.github.io/asf-app/">asf-app</a></footer>
-<script>
-const XP=()=>parseInt(localStorage.getItem('asf_xp')||'0');
-function addXP(n){localStorage.setItem('asf_xp',XP()+n);document.getElementById('xp').textContent=XP();}
-document.getElementById('xp').textContent=XP();
-let on=false;function start(){if(on)return;on=true;const fases=['Inspire 🌊','Segure 🤿','Expire 💨'];let i=0;const el=document.getElementById('fase'),c=document.getElementById('circ');const t=setInterval(()=>{el.textContent=fases[i%3];c.style.transform=i%3===0?'scale(1.4)':i%3===2?'scale(1)':'scale(1.4)';if(i%3===2)addXP(2);i++;if(i>=12){clearInterval(t);el.textContent='Ciclo completo! +XP';c.style.transform='scale(1)';on=false;}},4000);}
-</script>
-<script>
-const DICAS_RESP=[
-"🌬️ O segredo do hold-down não é ter mais ar — é gastar menos. Relaxe os ombros e o pescoço debaixo d'água.",
-"🫁 Diafragma é músculo: 5min de respiração abdominal por dia e sua capacidade pulmonar melhora em semanas.",
-"😮‍💨 Depois de emergir, primeiro EXPIRE, depois inspire. O recovery breathing protege contra o blackout.",
-"🧘 5 ciclos de 4-4-4 na areia antes de entrar no mar: foco ligado, medo desligado.",
-"💤 A técnica 4-7-8 é o botão de 'desligar' do corpo. Use na véspera de campeonatos.",
-"🤿 Nunca treine apneia na água sozinha. Blackout não avisa — treine em seco ou com parceira.",
-"🏄‍♀️ Na remada, respire no ritmo das braçadas: 2 inspira, 2 expira. Fôlego constante = mais ondas.",
-"❄️ Mar frio aperta a respiração: antes de entrar, faça 10 respirações profundas para preparar o corpo.",
-"😌 Pânico gasta 3x mais oxigênio. Debaixo d'água, conte devagar até a espuma clarear.",
-"🧠 A expiração longa (8s) acalma mais que qualquer inspiração profunda. Quando nervosa, foque em soltar o ar.",
-"📈 CO₂ table semanal: a tolerância ao gás carbônico é o que mais melhora seu tempo submersa.",
-"🌙 Respire pelo nariz sempre que possível: filtra, aquece e regula melhor o ar que a boca."
-];
-(function(){const now=new Date();const start=new Date(now.getFullYear(),0,1);const week=Math.floor((now-start)/6048e5);const el=document.getElementById('dica-semana');if(el)el.innerHTML='<b>'+DICAS_RESP[week%DICAS_RESP.length]+'</b>';addXP(3);})();
-</script>
-
-<!-- ASF Ecossistema Nav v2 (rede completa, 21 sites) -->
+<div class="xp" aria-label="Pontos de experiência">🌟 XP: <span id="xp">0</span></div>
+<footer>ASF — Associação de Surf Feminino · Feito com 🌊 e 💜<br><a href="https://asf.surf/">Voltar ao site ASF</a> · <a href="https://acarolmourad-commits.github.io/asf-app/">Voltar ao app</a></footer>
 <script>
 (function(){
-  function injectNav(){
-    if(document.querySelector('.asf-sat-nav'))return;
-    var old=document.querySelector('.asf-rede-nav');if(old)old.remove();
-    var sites=[["asf-app","\u{1F30A} App"],["asf-praias","\u{1F3D6}\uFE0F Praias"],["asf-previsao","\u{1F4C8} Previs\u00E3o"],["asf-treino","\u{1F3CB}\uFE0F Treino"],["asf-eventos","\u{1F4C5} Eventos"],["asf-glossario","\u{1F4D6} Gloss\u00E1rio"],["asf-comunidade","\u{1F4AC} Comunidade"],["asf-seguranca","\u{1F6FA} Seguran\u00E7a"],["asf-equipamento","\u{1F3C4}\u200D\u2640\uFE0F Equipamento"],["asf-quiz","\u{1F9E0} Quiz"],["asf-nutricao","\u{1F957} Nutri\u00E7\u00E3o"],["asf-viagens","\u{2708}\uFE0F Viagens"],["asf-historia","\u{1F3C6} Hist\u00F3ria"],["asf-bemestar","\u{1F9D8}\u200D\u2640\uFE0F Bem-estar"],["asf-ranking","\u{1F947} Ranking"],["asf-diario","\u{1F4D3} Di\u00E1rio"],["asf-respira","\u{1FAC1} Respira"],["asf-volume","\u{1F4D0} Volume"],["asf-yoga","\u{1F9D8} Yoga"],["asf-sos","\u{1F198} SOS"],["asf-eco","\u{1F331} Eco"]];
-    var nav=document.createElement('nav');
-    nav.className='asf-sat-nav';
-    nav.setAttribute('aria-label','Ecossistema ASF');
-    nav.style.cssText='background:linear-gradient(135deg,#0ea5e9,#6366f1);padding:.6rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;position:sticky;top:0;z-index:10000;';
-    sites.forEach(function(s){
-      var a=document.createElement('a');
-      a.href='https://acarolmourad-commits.github.io/'+s[0]+'/';
-      a.textContent=s[1];
-      a.style.cssText='color:#e0f2fe;text-decoration:none;font-weight:600;font-size:.75rem;padding:.28rem .55rem;border-radius:999px;background:rgba(255,255,255,.12);font-family:inherit;';
-      a.onmouseover=function(){a.style.background='rgba(255,255,255,.35)';};
-      a.onmouseout=function(){a.style.background='rgba(255,255,255,.12)';};
-      nav.appendChild(a);
-    });
-    document.body.insertBefore(nav,document.body.firstChild);
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',injectNav);}else{injectNav();}
+const $=id=>document.getElementById(id), phases=[{name:'Inspire suavemente',cls:'inhale'},{name:'Pausa confortável',cls:'hold'},{name:'Expire devagar',cls:'exhale'}];
+let timer=null,remaining=4,phase=0,cycle=0,running=false,paused=false;
+const total=12;
+function getXP(){try{return Math.max(0,parseInt(localStorage.getItem('asf_xp')||'0',10)||0)}catch(e){return 0}}
+function setXP(n){try{localStorage.setItem('asf_xp',String(n))}catch(e){}$('xp').textContent=n}
+setXP(getXP());
+function render(){
+ $('fase').textContent=phases[phase].name;$('contador').textContent=remaining+'s';$('orb').className='orb '+phases[phase].cls;
+ $('rodada').textContent='Ciclo '+Math.min(cycle+1,total)+' de '+total;
+ $('barra').setAttribute('aria-valuenow',String(cycle));$('progresso').style.width=(cycle/total*100)+'%';
+}
+function reset(message){
+ clearInterval(timer);timer=null;running=false;paused=false;remaining=4;phase=0;cycle=0;
+ $('iniciar').disabled=false;$('iniciar').textContent='Recomeçar';$('pausar').disabled=true;$('pausar').textContent='Pausar';$('encerrar').disabled=true;
+ $('fase').textContent='Pronta para começar?';$('contador').textContent='—';$('orb').className='orb';$('rodada').textContent='12 ciclos · cerca de 2 minutos e 24 segundos';$('barra').setAttribute('aria-valuenow','0');$('progresso').style.width='0%';$('estado').textContent=message;
+}
+function tick(){
+ remaining--;
+ if(remaining<=0){
+  phase++;
+  if(phase>=3){phase=0;cycle++;if(cycle>=total){setXP(getXP()+5);reset('Ciclo concluído! Você ganhou 5 XP. Respire naturalmente e observe como está se sentindo.');return}}
+  remaining=4;
+ }
+ render();
+}
+function start(){
+ if(running)return;running=true;paused=false;$('iniciar').disabled=true;$('pausar').disabled=false;$('encerrar').disabled=false;$('estado').textContent='Siga apenas se estiver confortável. Você pode pausar ou encerrar a qualquer momento.';render();timer=setInterval(tick,1000);
+}
+$('iniciar').addEventListener('click',start);
+$('pausar').addEventListener('click',function(){if(!running)return;if(paused){paused=false;timer=setInterval(tick,1000);$('pausar').textContent='Pausar';$('estado').textContent='Treino retomado.'}else{paused=true;clearInterval(timer);timer=null;$('pausar').textContent='Retomar';$('estado').textContent='Treino pausado. Retome apenas se estiver confortável.'}});
+$('encerrar').addEventListener('click',()=>reset('Treino encerrado. Volte à respiração natural, sem pressa.'));
+const tips=['Respirar com conforto é mais importante do que seguir uma contagem.','Relaxe os ombros e deixe a mandíbula solta.','Não force a inspiração nem a expiração.','Uma pausa consciente também pode ser simplesmente observar a respiração natural.','Segurança vem antes de qualquer desempenho.'];
+const week=Math.floor((Date.now()-new Date(new Date().getFullYear(),0,1).getTime())/604800000);
+$('dica').textContent=tips[week%tips.length];
 })();
 </script>
-<script src="https://acarolmourad-commits.github.io/asf-app/asf-network.js" defer></script>
-  <script src="https://acarolmourad-commits.github.io/asf-app/asf-redesign.js" defer></script>
-</body>
-</html>
+</body></html>
